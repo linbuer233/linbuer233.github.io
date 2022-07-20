@@ -1,0 +1,478 @@
+<!DOCTYPE html><html class="hide-aside" lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>文献阅读笔记 | LZY-Meteorological-Workshop</title><meta name="keywords" content="ML&amp;DL,气象"><meta name="author" content="我的二你模仿不来"><meta name="copyright" content="我的二你模仿不来"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="[TOC] 基于遗传算法的GRU神经网络采油量预测遗传算法中的全局搜索能力使得算法可以进行更好和更多的计算以得到神经网络模型中的最优的初始权重值以及阈值，使网络更快达到稳定的状态。 首先，根据待处理和预测的数据序列中包含的有关输入数据与相关输出信号的相关参数关系来具体确定该神经网络中的相关联接和架构参数以及每个连接的权值的个数和每个神经元阈值的个数等数值；其次，对计算这些相关联接中的神经元权值数目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文献阅读笔记">
+<meta property="og:url" content="https://meteolinziyang.cn/2022/06/21/paperread/index.html">
+<meta property="og:site_name" content="LZY-Meteorological-Workshop">
+<meta property="og:description" content="[TOC] 基于遗传算法的GRU神经网络采油量预测遗传算法中的全局搜索能力使得算法可以进行更好和更多的计算以得到神经网络模型中的最优的初始权重值以及阈值，使网络更快达到稳定的状态。 首先，根据待处理和预测的数据序列中包含的有关输入数据与相关输出信号的相关参数关系来具体确定该神经网络中的相关联接和架构参数以及每个连接的权值的个数和每个神经元阈值的个数等数值；其次，对计算这些相关联接中的神经元权值数目">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2022-06-21T06:25:26.000Z">
+<meta property="article:modified_time" content="2022-07-19T05:19:53.545Z">
+<meta property="article:author" content="我的二你模仿不来">
+<meta property="article:tag" content="ML&amp;DL">
+<meta property="article:tag" content="气象">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/kaby32.ico"><link rel="canonical" href="https://meteolinziyang.cn/2022/06/21/paperread/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '文献阅读笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-19 13:19:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/font_3435761_v3y68nzg1nd.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css"><meta name="generator" content="Hexo 6.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/head.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">52</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-history"></i><span> 历史</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-tag"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw iconfont icon-categories"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/book/"><i class="fa-fw iconfont icon-book"></i><span> 我与书</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-0301renxiang"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LZY-Meteorological-Workshop</a></span><div id="he-plugin-simple"> </div><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-history"></i><span> 历史</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-tag"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw iconfont icon-categories"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/book/"><i class="fa-fw iconfont icon-book"></i><span> 我与书</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-0301renxiang"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">文献阅读笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-21T06:25:26.000Z" title="发表于 2022-06-21 14:25:26">2022-06-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-19T05:19:53.545Z" title="更新于 2022-07-19 13:19:53">2022-07-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ML-DL/">ML&amp;DL</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="文献阅读笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>[TOC]</p>
+<h1 id="基于遗传算法的GRU神经网络采油量预测"><a href="#基于遗传算法的GRU神经网络采油量预测" class="headerlink" title="基于遗传算法的GRU神经网络采油量预测"></a>基于遗传算法的GRU神经网络采油量预测</h1><p>遗传算法中的全局搜索能力使得算法可以进行更好和更多的计算以得到神经网络模型中的最优的初始权重值以及阈值，使网络更快达到稳定的状态。</p>
+<p>首先，根据待处理和预测的数据序列中包含的<strong>有关输入数据</strong>与<strong>相关输出信号的相关参数关系</strong>来具体确定该神经网络中的<u>相关联接和架构参数以及每个连接的权值的个数和每个神经元阈值的个数等数值</u>；其次，对计算这些相关联接中的神经元权值数目和各个神经元阈值数量都是使用到了实数的编码计算方式；</p>
+<p>然后通过随机方法初始化输入连接的权重值及初始阈值并再利用前馈神经网络配置中出现的随机误差值作为对目标种群个体配置的自适应精度值并在最终时刻通过随机选择、交叉和变异的方法去寻找到匹配率最优值的目标种群个体，将优化配置完成后获得的<strong>初始输入连接的权值和初始阈值</strong>作为对目标神经网络<strong>配置的初始收敛状态值</strong>并最终对样本数据进行训练计算分析和预测，以此达到加快了目标神经网络模型的初始收敛模型的收敛速度性和预测和计算过程的准确性。</p>
+<p>最后，将遗传算法中所得出的最优个体值模型中<u>神经元与其所对应神经元的连接量值和阈值分别赋权分配给其所对应连接的目标神经元</u>，进行实现了一个实际而有效可行的目标神经网络模型的预测分析工作。</p>
+<p><img src="/2022/06/21/paperread/GA-GRU.png" alt="GA"></p>
+<p><strong>编码策略</strong></p>
+<p>网络结构中的网络层数和每一层的节点数量、权重需要优化。对权重采用实数编码，对网络结构采用二进制编码。</p>
+<p><img src="/2022/06/21/paperread/bian.png" alt="bian"></p>
+<p><strong>常见的选择策略</strong></p>
+<p>常见的有：轮盘赌选择法、精英选择法。</p>
+<p><img src="/2022/06/21/paperread/GAxuan.png" alt="xuan"></p>
+<h1 id="使用遗传算法训练神经网络（特别是GAN）（百度）"><a href="#使用遗传算法训练神经网络（特别是GAN）（百度）" class="headerlink" title="使用遗传算法训练神经网络（特别是GAN）（百度）"></a>使用遗传算法训练神经网络（特别是GAN）（百度）</h1><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/23856035">(4 条消息) 有关神经网络和遗传算法？ - 知乎 (zhihu.com)</a></p>
+<p>GAN是计算量特别大的模型之一，因为它相当于同时训练两个神经网络。</p>
+<p>遗传算法可以利用两个好的神经网络的权值交叉，可以得到英国更好的神经网络。</p>
+<p><strong>工作原理</strong></p>
+<p>生成一组随机权重。这是第一个智能体的神经网络。对智能体执行一组测试。智能体收到基于测试的分数。重复此操作几次以创建种群。选择种群的前10%可以进行繁衍。从前10%中随机选择两个父母，他们的权重是交叉的。每次交叉发生时，都有一个很小的突变机会：这是一个随机值，不在父对象的权重中。</p>
+<p>随着智能体慢慢适应环境，此过程会慢慢优化智能体的性能。</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>计算不密集</li>
+</ul>
+<p>不需要进行线性代数计算。唯一需要的机器学习计算是通过神经网络前向传播。因此，与深层神经网络相比，需求非常广泛。</p>
+<ul>
+<li>适应性强</li>
+</ul>
+<p>人们可以调整和插入许多不同的测试和方法来操纵遗传算法的灵活性。人们可以在遗传算法中<strong>创建一个GAN</strong>，方法是让智能体作为生成器网络，通过鉴别器进行测试。这是一个关键的好处，它使我相信遗传算法在未来的应用将更加广泛。</p>
+<ul>
+<li>可以理解</li>
+</ul>
+<p>对于普通神经网络，该算法的学习模式是神秘的。对于遗传算法来说，我们很容易理解为什么会发生一些事情：例如，当一个遗传算法被赋予Tic-Tac-Toe环境时，某些可识别的策略会慢慢发展。这是一个很大的好处，因为使用机器学习是为了使用技术来帮助我们深入了解重要问题。</p>
+<p><strong>缺点</strong></p>
+<ul>
+<li>需要很长的时间</li>
+<li>不好的交叉和突变会对程序的准确性产生负面影响，从而使程序收敛速度减慢或达到某个损失阈值。</li>
+</ul>
+<h1 id="人工智能在短临降水预报中应用研究综述"><a href="#人工智能在短临降水预报中应用研究综述" class="headerlink" title="人工智能在短临降水预报中应用研究综述"></a>人工智能在短临降水预报中应用研究综述</h1><p><strong>背景</strong></p>
+<p>利用气象数据实现对短临降水的预测是国内防灾减灾的热点和难点。</p>
+<p>短临降水量预报的目标是在未来（0-6h）内，对当地区域的降雨强度进行预测，具有准确性、实时性、大规模的特性。由于天气事件本身是一个随机事件，加上降水受气候带的、大气环流、地理高度、季节的等多重因素的影响，所以短临降水具有高度非线性的复杂特征，因此需要<strong>高时空分辨率和高时效性</strong>的数据来训练模型。</p>
+<p>使用雷达图进行短临降水预测主要是通过雷达回波外推实现的。雷达回波外推图既包括时序信息，又包含空间信息，从而使用雷达数据进行降水预测可以看作时空序列预测问题。</p>
+<p><strong>传统方法</strong></p>
+<ul>
+<li><strong>物理统计方法</strong></li>
+</ul>
+<p>该方法通过收集与降水相关的多种关联因子, 并利用数据建立物理统计模型, 从而对长期的降水量进行预测.所选择的因子具有一定的物理意义, 利用前兆信息因子和后期信息的遥相关原理, 对降水的轻重程度进行划分。</p>
+<ul>
+<li><strong>马尔可夫链预测模型</strong></li>
+</ul>
+<p>Markov 过程是研究某一事件的状态及状态之间转移规律的随机过程, 状态转移概率只与上一步转移后的状态有关, 而与之前所有状态无关, 即上一步的状态保存了之前所有的状态信息.马尔可夫链是时间和状态都离散的 Markov 过程, 可以根据 n 时刻的状态预测 n+1 时刻的状态, 概率最大的值即为预测结果.</p>
+<ul>
+<li><strong>数值天气预报方法</strong></li>
+</ul>
+<p>数值天气预报(numerical weather prediction) 是根据大气实际情况, 在一定初值和边值条件下, 通过用数值方法求解支配大气运动的流体动力学和热力学方程组, 来预报未来的大气环流形势和天气的.它具有数字化和定量客观的特点.</p>
+<p><strong>基于雷达图的预测方法</strong></p>
+<ul>
+<li><strong>Z-R关系式法</strong></li>
+</ul>
+<p>通过雷达回波强度和雨强二者之间建立的关系式来估算, 即天气雷达反射率因子(Z)和雨强(R)的Z- R 的关系式 Z=aR$^b$, a 和 b 为经验系数</p>
+<ul>
+<li><strong>降水云团外推技术</strong></li>
+</ul>
+<p>首先获取雷达反射率图像, 然后根据云团外推算法进行云团外推.云团的外推指的是根据相邻时刻同一云团形成的两幅反射率因子图, 计算它们之间的变化, 并依此得到未来短期时刻的云团形态</p>
+<ul>
+<li><strong>光流法</strong></li>
+</ul>
+<p>1950 年, Gibson 首次提出光流的概念[ 17 ]. 光流法是利用图像序列中像素在时间域上的变化以及相邻帧之间的相关性来找到上一帧跟当前帧之间存在的对应关系, 从而计算出相邻帧之间物体的运动信息的一种方法.使用光流法有着 3 个前提假设:</p>
+<p>1)亮度恒定不变, 即同一目标在不同帧间运动时, 亮度不会发生变化;</p>
+<p>2)时间连续或运动是微小的, 即时间的变化不会引起目标位置的剧烈变化, 相邻帧间位移小;</p>
+<p>3)同一子图像中像素点具有相同的运动.<br>光流法善于观察图像的变化, 并利用相邻图像间的相关性获取运动信息, 对其实现追踪.这与利用雷达数据对云团进行识别追踪进而完成降水预测的思想相一致.</p>
+<p><strong>未来的发展</strong></p>
+<p>首先, 进一步提升短期降水预报准确率可以考虑 2 个研究方向:</p>
+<p>1)将人工智能技术与传统数值预报模型结合, 理论驱动与数据驱动互为补充, 联合开展人工智能技术, 利用多种数值预报产品及实况观测资料, 针对不同季节, 开展人工智能技术在中短期降水预报中的偏差订正研究, 建立分时效降水偏差订正预报模型, 生成中短期降水预报产品, 提升中短期降水预报准确率;</p>
+<p>2)将降水预测问题看作是一个图像的转换问题, 开展 2 ~ 6 h 雷达外推与模式融合降水预报等技术应用研究, 使用人工智能技术提高雷达外推的准确率和及时性。</p>
+<p>对于强天气预警技术, 采用基于大数据和人工智能的强降水、 雷暴大风、 冰雹、 龙卷风、 雷电等强对流天气系统监测识别、分类强对流天气智能识别和智能报警技术, 建立强天气智慧预报预警业务;</p>
+<h1 id="机器学习在强对流监测预报中的应用进展"><a href="#机器学习在强对流监测预报中的应用进展" class="headerlink" title="机器学习在强对流监测预报中的应用进展"></a>机器学习在强对流监测预报中的应用进展</h1><p>强 对 流 天 气 预 报 主 要 关 注 时 空 尺 度 较 小、 发 展剧 烈 的 天 气 现 象, 如 冰 雹、 雷 暴 大 风、 短 时 强 降 水、龙卷 等 恶 劣 天 气。</p>
+<p><strong>传统方法</strong></p>
+<p>传 统 的 客 观 做 法, 根 据 物 理 机 理、 预 报 员 经 验 和统 计 结 果, 通 过 对 观 测 数 据 设 置一定 阈 值, 对 强 对 流天 气 进 行 识 别 和 监 测, 通 常 会 造 成 虚 警 率 偏 高（外推法）。</p>
+<p>冰雹和雷暴大风往 往 在 局 地 性 极 强 的 对 流 性 系统 中 发 展 而 来, 由 于 局 地 性 很 强, 现 有 观 测 网 依 然 难以 完 全 捕 捉( 郑 永 光 等, 2 0 1 7) , 具 有 很 大 的 观 测 难度。</p>
+<p><strong>风暴的识别与追踪</strong></p>
+<p>基于 卫 星、 雷 达、 闪 电 等 观 测 数 据, 利 用 机 器 学习 算 法, 能 够 有 效 实 现 对 对 流 系 统 的 识 别 和 追 踪, 提取 对 流 系 统 的 移 动 方 向、移 动 速 度 等 信 息, 为 对 流 预警 提 供 重 要 信 息。</p>
+<p><strong>结论</strong></p>
+<p>机器 学 习 在 大 气 科 学 领 域 的 应 用 基 础 仍然 依 赖 于 高质 量 的 观 测 数 据、 可 靠 的 数 值 模 式 预 报 结 果 以 及 深刻 的 天 气 原 理 认 识, 且 要 根 据 不 同 的 应 用 场 景 结 合物 理 机 理 选 择 合 适 的 机 器 学 习 方 法。究 其 本 质, 机器 学 习 只 是一个工具, 并 不 能 替 代 基 础 天 气 观 测 数据、数 值 预 报 模 式、 天 气 学 和 大 气 动 力 学 基 础 理 论 发展 的 研 究。 在 利 用 人 工智 能 技 术 发 展 天 气 预 报 技 术的 同 时, 也 需 时 刻 牢 记 大 气 科 学 基 础 理 论 才 是 强 对流 天 气 预 报 的 基 础 和 土壤。</p>
+<h1 id="基于深度卷积神经网络的强对流天气预报方法研究"><a href="#基于深度卷积神经网络的强对流天气预报方法研究" class="headerlink" title="基于深度卷积神经网络的强对流天气预报方法研究"></a>基于深度卷积神经网络的强对流天气预报方法研究</h1><p>多源观测数据综合应用, 能够有效取长补短。 虽然静止气象卫星具备<strong>对流初生</strong>的观测能力, 然而其观测的主要是<strong>对流云顶的发生发展特征</strong>, 尚无法实现对流系统内部的观测。 天气雷达则可观测对流风暴的内部分布特征, 能够与静止气象，卫星数据形成互补,实现对流系统的多方面观测。但多源观测数据表现形式、物理意义各异,如何将多源数据实现有效融合,也是当前面临的挑战之一。机器学习算法能够<strong>自动学习并提取特征</strong>,为多源数据融合提供了新的思路。</p>
+<p>基于 MSG 卫星的成像仪 SEVIRI 探测的云顶顶高、云顶温度、云相态和云水路径等因子，Kühnlein et al（2014）利用<code>随机森林</code>、Meyer et al（2015）利用四种机器学习算法（<em>RF、神经网络、平均神经网络和 SVM</em>）进行定量降水估计。他们首先区分<strong>降水区与非降水区</strong>，然后实现<strong>对流降水与非对流降水区域</strong>划分，最后不同的降水区域使用不同的降水反演因子，实现中纬度地区全天候的定量降水估计。</p>
+<p><strong>基于数值预报的强对流天气短期分类预报</strong></p>
+<p>中国地域辽阔、地势复杂，不同地区地形条件、气候条件差异显著，强对流天气发生发展条件与特征阈值范围必然会存在差异，难以使用<strong>一套统一的特征物理量阈值</strong>组合来实现全国分类强对流天气的预报。</p>
+<p>强对流天气系统<strong>时空尺度较小，具有复杂的物理过程与动力特征</strong>。随着中小尺度观测网络的日益健全，观测手段的日益丰富，观测数据迅速增长。如何有效地从每一次强对流天气的过程中学习强对流过程的发生发展机制，如何从大量的数值模式数据中提取各类强对流天气的特征参量和阈值范围，如何综合考虑<strong>每一个地区的地理、气候环境，</strong>成为能否有效预报强对流的关键。<u>深度学习算法能从大量数据中自动提取特征，深入挖掘有效信息，并综合考虑各地地理环境与气候差异</u>，将有效改善强对流预报结果。</p>
+<h1 id="浅析短临预报在农业防灾减灾中的作用"><a href="#浅析短临预报在农业防灾减灾中的作用" class="headerlink" title="浅析短临预报在农业防灾减灾中的作用"></a>浅析短临预报在农业防灾减灾中的作用</h1><p>农业防灾减灾中的难题为强对流天气预报，此类灾害不仅生命史比较短，而且突发性很强，部分灾害仅几分钟或者几十分钟，最长不超过十几个小时。</p>
+<p>以往农业防灾减灾实践中采取的短期预报，仅能预报 1~3 d 的天气，若想提前 1~2 h 了解天气变化，精准掌握气象动态，还需要依靠短临预报，更加准确地捕捉所在位置，精准捕捉强对流天气系统的变化轨迹，做到精准预报降雨区域，准确预判未来数小时内是否会产生洪涝灾害，通知居民撤退，指导防灾减灾工作的开展与落实。</p>
+<p>气象部门还要做好灾情的收集以及上报，针对给本地区造成重大灾害的天气或者关键性天气过程进行系统化总结，<br>评估效益，提出具体的应对措施；结合卫星云图以及雷达资料等，做好实际数据资料的分析，利用现代化技术手段实现对天气的紧密监视，如果发现变化情况，则必须及时通知农业部门等相关部门做好防灾减灾工作，及时在本部门微信、微博、抖音、知天气 app及农气宝 app等各类线上软件平台做好发布工作；短临预报工作人员要积极学习新知识与新方法，高质量落实预报服务工作，为农业防灾减灾措施的高质量落实提供帮助。</p>
+<h1 id="一种雷达回波外推短临预报方法仿真"><a href="#一种雷达回波外推短临预报方法仿真" class="headerlink" title="一种雷达回波外推短临预报方法仿真"></a>一种雷达回波外推短临预报方法仿真</h1><p><strong>动态神经网络</strong></p>
+<p>随着全球气候恶化情况的逐渐严峻,各种突发性、极端天气 越来越多见,这类气象具有破坏性较大,影响范围大等特点, 对人们日常出行,农作物生产以及施工建设等均会造成一定 程度的影响。 因此,需要对短时突发天气进行准确预报。</p>
+<p>当前普遍使用的雷达回波外推技术多以<em>深度学习和卷积神经网络</em>为基础 ,但由于自然环境的多变, 导致短临预报结果具有一定误差,且时效性较差。 针对上述 问题,考虑<strong>外推图像与输入图像间的高度相关性</strong>,提出基于循环动态卷积的雷达回波外推短临预报方法,提升卷积神 经网络对于时序图像的处理效果。</p>
+<p>循环动态卷积神经网络以动态卷积神经 网络为基础 ,引入循环神经网络,利用其构建相邻时刻输 入图像序列间的相关性,以此提升具有时序特征输入图像的 外推结果精度。</p>
+<p><img src="/2022/06/21/paperread/dongCNN.png" alt="dongCNN"></p>
+<h1 id="基于深度学习的雷达降水临近预报研究"><a href="#基于深度学习的雷达降水临近预报研究" class="headerlink" title="基于深度学习的雷达降水临近预报研究"></a>基于深度学习的雷达降水临近预报研究</h1><p>数值天气 预报在不同时空尺度上都有较强的预报能力，但在预报时存在较为严重的公式化， 在一定程度上限制了预报的精度；同时也存在预报延迟，短时临近预报能力弱， 模式偏差随着预报时间的增长愈发显著等问题，不能满足临近预报的时效要求。</p>
+<p>数值天气 预报在不同时空尺度上都有较强的预报能力，但在预报时存在较为严重的公式化， 在一定程度上限制了预报的精度；同时也存在预报延迟，短时临近预报能力弱， 模式偏差随着预报时间的增长愈发显著等问题，不能满足临近预报的时效要求。</p>
+<p>临近预报主要是根据基于当前时刻的探测资料，对后续 0-2h 内的天气过程 进行预报分析的高时空分辨率的天气预报。从监测手段来看，目前主要应用的方法有遥感卫星观测、数值预报法和基于雷达回波的外推法。</p>
+<p>因为光流法具有一定的物理意义，使得它对演变速度较快的强对流天气过程 中的预报效果相对较好。</p>
+<p><strong>展望</strong></p>
+<p>基于雷达资料的临近降水预报方法是气象预报研究的热点，天气雷达资料具 有数据量大、规律性强的特点，因此利用深度学习模型学习天气系统变化特征和 规律具有较大的研究价值。</p>
+<p><strong>论文主要内容</strong></p>
+<p>利用不同的采样方法对新一代多普勒天气雷达回波数据进行采样，构造雷达 回波数据集；构建了 ConvGRU 与 ConvLSTM 深度学习预报模型，利用 20182019 年 4 月-9 月雷达回波数据，分析雷达回波变化规律，引入验证集验证模型 精度；利用 2019 年 6-7 月的<strong>雷达及雨量计数据，进一步通过𝑍 − 𝑅关系反演站点雨强</strong>。通过与传统方法进行对比验证，深度学习模型在临近降水预报种取得了较 好的实验结果。主要研究结论： </p>
+<ul>
+<li>（1）对于选取 3000m 高度层的单层数据和对 3000m-5500m 范围内的多层 数据进行采样的两种数据处理方式，<strong>单层数据中所包含的信息较少，只含有当前 高度层的回波状态，多层的采样数据则反应了更多的天气状况，但回波中的峰值 相较与 3000m 高度层偏低</strong>；在回波预测的评价指标中，总体变化趋势大致相同， 但<strong>多层数据的各项指标都相对偏高，误报率的值也相对较高，在降水预报业务的 实际应用中会存在更多的误差</strong>。 </li>
+<li>（2）对比预测回波的形状，ConvGRU 与 ConvLSTM、LSTM 和 Of 四种方 法中，ConvGRU 与 ConvLSTM 的效果都相对较好，在较长时间的预测中 ConvGRU 更加具有优势；对比四种方法的预测评价，ConvGRU 与 ConvLSTM 的各项指标都呈现较高的精度，<strong>Of 在 1h 内的预报能力较好</strong>，LSTM 整体精度偏低。 </li>
+<li>（3）在雷达回波预测中引入阈值来检验，不同强度的雷达回波预报的评分， 随着雷达回波强度的增加，CSI 评分呈下降趋势，整体预报精度降低。对 30dBz 以上的回波预报效果不佳，成功率低。 </li>
+<li>（4）对站点的降雨强度进行估测，ConvGRU 和 ConvLSTM 总体离散度较小，稳定性高，误差均相对较低；Of 虽然相关性不错，但低估程度明显；而 LSTM 的估测精度普遍偏低，不能较好的估测站点的雨强</li>
+<li>（5）深度学习模型解决非线性问题的能力较强，在业务应用种具有较好的 推广能力，大量数据的学习能够从复杂的时间、空间序列中找出一定的演变规律， 在相似的降水过程中做出快速反应，从而进行高精度的预报。</li>
+</ul>
+<h1 id="四种机器深度学习算法对武汉地区雷达回波临近预报的检验和评估"><a href="#四种机器深度学习算法对武汉地区雷达回波临近预报的检验和评估" class="headerlink" title="四种机器深度学习算法对武汉地区雷达回波临近预报的检验和评估"></a>四种机器深度学习算法对武汉地区雷达回波临近预报的检验和评估</h1><p><strong>简述</strong></p>
+<p>基于PredRNN++ 、 MIM、 CrevNet 和PhyDNet四种机器深度学习算 法 。</p>
+<p>均 方 误 差 （MSE）、结构相似性指数 （SSIM） 、命中率（POD） 、 虚警率 （FAR）和临界成功指数 （CSI）等指标检验评估了四种机器学习算法对武汉地区雷达回波临近预报的预报性能。</p>
+<p>得到 以 下 主 要 结 论 ：MIM 算法的MSE 和 FAR 最低 ，SSIM最高；PredRNN++算法的POD和CSI最高 。机器深度学习算法的 POD、CSI 和 SSIM均高于光流法 、FAR和 MSE则更低 、其 中 SSIM、POD 、CSI三种指标的提 升幅度在３.２％ ~２４.７％ ，MSE 和 FAR两种指标的降幅在１３.１％ ~ ４３.3% ,３０min 以 内 ， 除 CrevNet外,其余三种机器学习算法和光流法的预报能力较为接近;30min以后,深度学习算法和光流法都随着预报时效的延长 ,预报能力均显著下降,但机器学习算法下降得更缓慢，尤 其 是 60min以后光流法的降幅进一步增加，显示出机器学习长预报时效的优势。</p>
+<p>四个不同回波形态 、不同发展趋势个例的分析结果表明 ，机器学习算法不仅具备对一定回波强度变化的预报 能力，而且对回波强度和面积变化趋势的时间节点预报也与实况基本一致。此外，机器学习算法对回波运动的预报能力明显强于光流法，显示出机器学习算法良好的应用前景 。</p>
+<p>临近预报的方法主要有雷达回波外推预报 、中尺度数值模 式预报以及概念模型预报等（Ｗｉｌｓｏｎ ｅ ｔ. ａｌ ,１９９８ ）。<strong>中尺度数值模式预报由于模式初始场协调和资料同化时效等问题的限制，在最初的几个小时内其预报效果较差，甚至无法直接用于临近预报</strong> （王丹等， ２０１４；吴 剑 坤 等，２０１９ ）；概念模型预报带  预报员一定的个人主观性，且精细化程度较低。</p>
+<p><strong>雷达资料</strong></p>
+<p>雷达回波数据进行了孤立噪音过滤和超折射回波抑制（吴涛等，２０１３），并利用中值滤波 （ 赵 悦 等 ， ２0０７）进 行质 量 控 制。</p>
+<p><strong>检验方法</strong>（为统一有效地评估哥算法的预报能力）</p>
+<p>以实况回波图像为基础，将<strong>实际回波图像和预报的回波图像</strong>格点化成单独的像素点，再逐个像素点检验预报准确率，用均方误差（MSE），用结构相似性指数（SSIM)衡量<strong>预报回波图像与实际回波图像的相似度</strong>，SSIM介于-1~1，当两张图片一模一样时SSIM的值等于1。MSE和SSIM的计算公式如下：</p>
+<script type="math/tex; mode=display">
+MSE=\frac{1}{N}\sum_{i-1}^{N}(y_{i}-pre_{i})^2
+\\\\
+SSIM(x,y)=\frac{(2U_{x}U_{y}+c_{1})(2\sigma _{xy}+c_{1})}{(U_{x}^2+U_{y}^2+c_{1})(\sigma _{x}^2+\sigma_{y}^2+c_{2})}
+\\
+式中：U_{x}为像素点预报回波的平均值；\\\sigma_{x}^2为像素点预报回波的方差；\\U_{y}为像素点实际回波的平均值；\\\sigma_{y}^2为像素点实际回波的方差；\\\sigma_{xy}为像素点预报回波与实际回波的协方差；\\c_{1}=(K_{1}L)^2,c_{2}=(K_{2}L)^2\\
+其中K_{1},K_{2}是参数，K_{1}=0.01,K_{2}=0.03,L是像素点回波强度的动态范围。</script><p>为了考察各方法对不同量级范围内反射率因子的预报能力，采用临界成功指数（critical success index,CSI）、命中率（probability of detection,POD）和虚警率（false alarm rate，FAR）等指标对预报结果进行量化评估，其计算公式如下：</p>
+<script type="math/tex; mode=display">
+POD_{k}=\frac{NA_{k}}{NA_{k}+NC_{k}}
+\\\\
+FAR_{k}=\frac{NB_{k}}{NA_{k}+NB_{k}}
+\\\\
+POD_{k}=\frac{NA_{k}}{NA_{k}+NC_{k}}\\
+式中：NA_{k}为预报正确格点数，NB_{k}为空报格点数，NC_{k}为漏报格点数，\\k为检验雷达回波不同强度阈值，\\采用分阈值的检验方法（分别为20、30、40和50dBz），对逐个像素点进行检验。</script><table>
+    <tr>
+        <td rowspan="2"><center>实况</center></td> 
+        <td colspan="2"><center>预报</center></td> 
+   </tr>
+   <tr>
+        <td><center>>=k</center></td>
+        <td><center>< k</center></td>
+   </tr>
+   <tr>
+       <td><center>>=k</center></td> 
+       <td><center>NAk</center></td>
+       <td><center>NCk</center></td>
+   </tr>
+    <tr>
+        <td> <center> < k </center></td> 
+        <td> <center>NBk</center></td>
+        <td><center> NDk </center></td>
+    </tr>
+</table>
+
+
+
+<p><strong>四个机器学习算法介绍</strong></p>
+<ol>
+<li><p>PredRNN++算法 </p>
+<p>在ConvLSTM算法的基础上，将可以记忆的单元放置在算法的堆叠结构中，提出了PredRNN算法，为了缓解该算法中梯度容易消失的问题以及提高其对短时非线性时空特征的提取能力，引入了GHU（gradient highway unit ），该结构使得梯度能够在第一层和第二层之间高速传递，有效抑制了梯度的消失，最终提出了PredRNN++算法。</p>
+</li>
+<li><p>MIM算法</p>
+<p>该算法分两次对图片信息进行提取，首先由MIM-N 结构提取出平稳信息，而后传递给MIM-S，MIM-S则利用门控来选择<strong>记忆或忘记非平稳信息</strong>的多少，同时通过多层模块之间相互的差分运算，使得非平稳信息缓慢降低，从而提取出各种高阶的非平稳信息，最终将所提取的<strong>平稳信息</strong>和<strong>非平稳信息</strong>相结合，进行输出和预测。</p>
+</li>
+<li><p>CrevNet算法</p>
+<p>该算法是一种全新的嵌套了三维卷积模块的<strong>双向可逆自编码</strong>结构，其在一系列<strong>正向和反向计算过程</strong>中使得输入和特征之间建立了一对一的双向映射关系，这种关系理论上保证了在特征提取过程中不丢失信息，因而保留更多信息进行预测，明显提高了预测图片的清晰度。</p>
+</li>
+<li><p>PhyDNet算法</p>
+<p>该算法参考了MIM算法的基本假设，将图片信息分为<strong>已知的物理过程和未知因素</strong>（包括生消、发展等两个部分），然后用深度网络结构来约束模型，以<strong>ConvLSTM为主要内核来提取未知因素</strong>，此外<strong>利用卷积过程模拟偏导</strong>，从而学习到新的物理信息，最后将物理信息和已有的未知因素结合，从而进行更好的预测。</p>
+</li>
+</ol>
+<p><strong>结论</strong></p>
+<p>虽然机器深度学习算法较光流法表现出一定程度的优势 ，但也存在一些问题：首先 ，从时间演变来看 ，机器学习算法预测的回波 在６０ｍｍ 之 后 逐 渐 开始 “ 雾化 ” ， 这 种 “ 模 糊化 ” 作 用 会 让小 面 积 的最强回波被 平 滑 掉 ， 并 “ 泛 化 ” 出较大的 次 强回 波的 范 围 ， 因此在业务应用过程中 ，对 于 ６０ｍiｎ 后 ， 尤其是９0ｍｍ后 ， 机器学习预报出回波面积显著增大的区域 ， 需 要特别警惕降水区 域 可能有显著的变化</p>
+<h1 id="基于ConvLSTM的广西短临降水预报"><a href="#基于ConvLSTM的广西短临降水预报" class="headerlink" title="基于ConvLSTM的广西短临降水预报"></a>基于ConvLSTM的广西短临降水预报</h1><p><strong>数据预处理</strong></p>
+<p>雷达波束在传播过程中遇到山体、植被和建筑物等地干扰，导致雷达发射的电磁波束受到局部或全部遮挡。地物干扰会导致观测信号出现噪声，这些会对真实雷达回波运动矢量分析和降水估计带来一定误差。（采用局部均值算法进行地物杂波去噪）</p>
+<p><strong>评估方法</strong></p>
+<p>在计算上述指标时，首先需要设定一个回波强度阈值，在实际观测中，若某个 像素点的值大于回波强度阈值，则判定判定实际观测值是活跃的，否则为不活跃；若回波外推结果中的某个像素点的值大于该回波强度阈值，则判定预测值为活跃，否则为不活跃。对于实际观测值和预报值均为活跃的情况，认定为预报成功，记为 S；对于<strong>观测值为活跃</strong>而预测值为不活跃的情况，视为漏报，记为M；对于<strong>实际观测值为不活跃</strong>，预报值为活跃的情况，视为空报，记为F。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">我的二你模仿不来</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://meteolinziyang.cn/2022/06/21/paperread/">https://meteolinziyang.cn/2022/06/21/paperread/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://meteolinziyang.cn" target="_blank">LZY-Meteorological-Workshop</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ML-DL/">ML&amp;DL</a><a class="post-meta__tags" href="/tags/%E6%B0%94%E8%B1%A1/">气象</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/06/26/%E2%80%9CDLnet%E2%80%9D/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">network笔记</div></div></a></div><div class="next-post pull-right"><a href="/2022/06/06/ARNNbiji/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">RNN学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/07/04/pingfen/" title="预测评估的指标"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-04</div><div class="title">预测评估的指标</div></div></a></div><div><a href="/2022/06/05/ACNN-bj/" title="CNN学习笔记"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-05</div><div class="title">CNN学习笔记</div></div></a></div><div><a href="/2022/06/06/ARNNbiji/" title="RNN学习笔记"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">RNN学习笔记</div></div></a></div><div><a href="/2022/06/26/%E2%80%9CDLnet%E2%80%9D/" title="network笔记"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-26</div><div class="title">network笔记</div></div></a></div><div><a href="/2022/04/07/Chinasouthsea/" title="绘制带有南海子图的地图"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-07</div><div class="title">绘制带有南海子图的地图</div></div></a></div><div><a href="/2022/04/17/buyanpoumian/" title="不沿着经纬线画剖面图"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-17</div><div class="title">不沿着经纬线画剖面图</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/head.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">我的二你模仿不来</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">52</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/linbuer233"><i class="iconfont icon-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/linbuer233" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="https://gitee.com/linziyang233" target="_blank" title="码云"><i class="iconfont icon-gitee"></i></a><a class="social-icon" href="http://bbs.06climate.com/?127440" target="_blank" title="气象家园"><i class="iconfont icon-cloud"></i></a><a class="social-icon" href="https://www.heywhale.com/home/user/profile/6173ad60825f1300172975eb" target="_blank" title="和鲸社区"><i class="iconfont icon-cubes"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">welcome to my blog <br> 发现身边有趣的事,然后enjoy it <br> 邮箱 linziyang233@163.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E7%9A%84GRU%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E9%87%87%E6%B2%B9%E9%87%8F%E9%A2%84%E6%B5%8B"><span class="toc-number">1.</span> <span class="toc-text">基于遗传算法的GRU神经网络采油量预测</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%88%E7%89%B9%E5%88%AB%E6%98%AFGAN%EF%BC%89%EF%BC%88%E7%99%BE%E5%BA%A6%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">使用遗传算法训练神经网络（特别是GAN）（百度）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%9C%A8%E7%9F%AD%E4%B8%B4%E9%99%8D%E6%B0%B4%E9%A2%84%E6%8A%A5%E4%B8%AD%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6%E7%BB%BC%E8%BF%B0"><span class="toc-number">3.</span> <span class="toc-text">人工智能在短临降水预报中应用研究综述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9C%A8%E5%BC%BA%E5%AF%B9%E6%B5%81%E7%9B%91%E6%B5%8B%E9%A2%84%E6%8A%A5%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E8%BF%9B%E5%B1%95"><span class="toc-number">4.</span> <span class="toc-text">机器学习在强对流监测预报中的应用进展</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%BC%BA%E5%AF%B9%E6%B5%81%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6"><span class="toc-number">5.</span> <span class="toc-text">基于深度卷积神经网络的强对流天气预报方法研究</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%85%E6%9E%90%E7%9F%AD%E4%B8%B4%E9%A2%84%E6%8A%A5%E5%9C%A8%E5%86%9C%E4%B8%9A%E9%98%B2%E7%81%BE%E5%87%8F%E7%81%BE%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">6.</span> <span class="toc-text">浅析短临预报在农业防灾减灾中的作用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E7%A7%8D%E9%9B%B7%E8%BE%BE%E5%9B%9E%E6%B3%A2%E5%A4%96%E6%8E%A8%E7%9F%AD%E4%B8%B4%E9%A2%84%E6%8A%A5%E6%96%B9%E6%B3%95%E4%BB%BF%E7%9C%9F"><span class="toc-number">7.</span> <span class="toc-text">一种雷达回波外推短临预报方法仿真</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E9%9B%B7%E8%BE%BE%E9%99%8D%E6%B0%B4%E4%B8%B4%E8%BF%91%E9%A2%84%E6%8A%A5%E7%A0%94%E7%A9%B6"><span class="toc-number">8.</span> <span class="toc-text">基于深度学习的雷达降水临近预报研究</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E7%A7%8D%E6%9C%BA%E5%99%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E5%AF%B9%E6%AD%A6%E6%B1%89%E5%9C%B0%E5%8C%BA%E9%9B%B7%E8%BE%BE%E5%9B%9E%E6%B3%A2%E4%B8%B4%E8%BF%91%E9%A2%84%E6%8A%A5%E7%9A%84%E6%A3%80%E9%AA%8C%E5%92%8C%E8%AF%84%E4%BC%B0"><span class="toc-number">9.</span> <span class="toc-text">四种机器深度学习算法对武汉地区雷达回波临近预报的检验和评估</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8EConvLSTM%E7%9A%84%E5%B9%BF%E8%A5%BF%E7%9F%AD%E4%B8%B4%E9%99%8D%E6%B0%B4%E9%A2%84%E6%8A%A5"><span class="toc-number">10.</span> <span class="toc-text">基于ConvLSTM的广西短临降水预报</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/07/04/pingfen/" title="预测评估的指标">预测评估的指标</a><time datetime="2022-07-04T10:38:51.000Z" title="发表于 2022-07-04 18:38:51">2022-07-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/06/26/%E2%80%9CDLnet%E2%80%9D/" title="network笔记">network笔记</a><time datetime="2022-06-26T13:42:55.000Z" title="发表于 2022-06-26 21:42:55">2022-06-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/06/21/paperread/" title="文献阅读笔记">文献阅读笔记</a><time datetime="2022-06-21T06:25:26.000Z" title="发表于 2022-06-21 14:25:26">2022-06-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/06/06/ARNNbiji/" title="RNN学习笔记">RNN学习笔记</a><time datetime="2022-06-06T12:01:18.000Z" title="发表于 2022-06-06 20:01:18">2022-06-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/06/05/gitbanben/" title="git本地仓库使用笔记">git本地仓库使用笔记</a><time datetime="2022-06-05T12:17:40.000Z" title="发表于 2022-06-05 20:17:40">2022-06-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 我的二你模仿不来</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index"><img class="icp-icon" src="icp图片"><span>备案号:桂ICP备2022004619号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script async src="/js/weather.js"></script><div class="aplayer no-destroy" data-id="7352250363" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-volume="0.5" data-order="random"> </div><script src="https://fastly.jsdelivr.net/gh/linbuer233/live2d-widget/autoload.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?linbuer233";
+            var git_color =['#ebedf0', '#f0fff4', '#dcffe4', '#bef5cb', '#85e89d', '#34d058', '#28a745', '#22863a', '#176f2c', '#165c26', '#144620'];
+            var git_user ="linbuer233";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
