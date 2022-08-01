@@ -8,7 +8,7 @@
       <link href="/2022/08/01/DLnet/"/>
       <url>/2022/08/01/DLnet/</url>
       
-        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- timeline 08-01 --&gt;</span><br><span class="line"># &#123;&#123;date&#125;&#125;</span><br><span class="line">DGMR中 loss采用SSIM(**Structural Similarity**)，结构相似性，是一种衡量两幅图像相似度的指标。</span><br><span class="line">比MSEloss收敛更快。pytorch实现：pytorch-msssim</span><br><span class="line">====</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## &#123;&#123;date&#125;&#125; : 1</span><br><span class="line">DGMR中 loss采用SSIM(**Structural Similarity**)，结构相似性，是一种衡量两幅图像相似度的指标。</span><br><span class="line">比MSEloss收敛更快。pytorch实现：pytorch-msssim</span><br><span class="line">====</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -479,9 +479,9 @@
             
             <tag> Python </tag>
             
-            <tag> 小技巧 </tag>
-            
             <tag> 气象 </tag>
+            
+            <tag> 小技巧 </tag>
             
         </tags>
       
@@ -1099,9 +1099,9 @@
             
             <tag> Python </tag>
             
-            <tag> 小技巧 </tag>
-            
             <tag> 画图 </tag>
+            
+            <tag> 小技巧 </tag>
             
         </tags>
       
