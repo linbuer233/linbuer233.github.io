@@ -8,7 +8,7 @@
       <link href="/2022/08/01/DLnet/"/>
       <url>/2022/08/01/DLnet/</url>
       
-        <content type="html"><![CDATA[<ul><li>[ ] DGMR中 loss采用SSIM(<strong>Structural Similarity</strong>)，结构相似性，是一种衡量两幅图像相似度的指标。比MSEloss收敛更快。pytorch实现：pytorch-msssim<div class="article-sort"><div class="article-sort-item year">2022</div><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2022-01-07T07:13:11.000Z" title="发表于 2022-01-07 15:13:11">2022-01-07</time></div><a class="article-sort-item-title" href="/2022/01/07/markdown2/" title="markdown进阶语法" data-pjax-state>markdown进阶语法</a></div></div></div></li></ul>]]></content>
+        <content type="html"><![CDATA[<div class="article-sort"><div class="article-sort-item year">2022</div><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2022-08-01T07:13:11.000Z" title="发表于 2022-08-01 15:13:11">2022-08-01</time></div><a class="article-sort-item-title" title="随笔" data-pjax-state>DGMR中 loss采用SSIM(**Structural Similarity**)，结构相似性，是一种衡量两幅图像相似度的指标。比MSEloss收敛更快。pytorch实现：pytorch-msssim</a></div></div><p>&lt;/div&gt;</p></div>]]></content>
       
       
       <categories>
