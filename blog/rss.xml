@@ -4,11 +4,21 @@
         <title>LZY-Meteorological-Workshop Blog</title>
         <link>https://linbuer233.github.io/blog</link>
         <description>LZY-Meteorological-Workshop Blog</description>
-        <lastBuildDate>Mon, 04 Jul 2022 18:38:51 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 21 May 2023 14:35:25 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-Hans</language>
         <copyright>Copyright © 2023 Facebook, Inc.</copyright>
+        <item>
+            <title><![CDATA[正则表达式笔记]]></title>
+            <link>https://linbuer233.github.io/blog/Regular_Expression(正则表达式)</link>
+            <guid>https://linbuer233.github.io/blog/Regular_Expression(正则表达式)</guid>
+            <pubDate>Sun, 21 May 2023 14:35:25 GMT</pubDate>
+            <description><![CDATA[正则表达式是使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。]]></description>
+            <category>命令</category>
+            <category>编程相关</category>
+            <category>正则表达式</category>
+        </item>
         <item>
             <title><![CDATA[预测评估的指标]]></title>
             <link>https://linbuer233.github.io/blog/pingfen</link>

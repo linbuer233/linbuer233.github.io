@@ -2,12 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://linbuer233.github.io/blog</id>
     <title>LZY-Meteorological-Workshop Blog</title>
-    <updated>2022-07-04T18:38:51.000Z</updated>
+    <updated>2023-05-21T14:35:25.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://linbuer233.github.io/blog"/>
     <subtitle>LZY-Meteorological-Workshop Blog</subtitle>
     <icon>https://linbuer233.github.io/img/kaby32.ico</icon>
     <rights>Copyright © 2023 Facebook, Inc.</rights>
+    <entry>
+        <title type="html"><![CDATA[正则表达式笔记]]></title>
+        <id>https://linbuer233.github.io/blog/Regular_Expression(正则表达式)</id>
+        <link href="https://linbuer233.github.io/blog/Regular_Expression(正则表达式)"/>
+        <updated>2023-05-21T14:35:25.000Z</updated>
+        <summary type="html"><![CDATA[正则表达式是使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。]]></summary>
+        <author>
+            <name>linziyang</name>
+            <uri>https://github.com/linbuer233</uri>
+        </author>
+        <category label="命令" term="命令"/>
+        <category label="编程相关" term="编程相关"/>
+        <category label="正则表达式" term="正则表达式"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[预测评估的指标]]></title>
         <id>https://linbuer233.github.io/blog/pingfen</id>
