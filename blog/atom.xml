@@ -29,10 +29,6 @@
             <name>linziyang</name>
             <uri>https://github.com/linbuer233</uri>
         </author>
-        <author>
-            <name>RSS 订阅</name>
-            <uri>https://linbuer233.github.io/blog/rss.xml</uri>
-        </author>
         <category label="命令" term="命令"/>
         <category label="编程相关" term="编程相关"/>
         <category label="正则表达式" term="正则表达式"/>
@@ -78,10 +74,6 @@ M1001 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlis
         <author>
             <name>linziyang</name>
             <uri>https://github.com/linbuer233</uri>
-        </author>
-        <author>
-            <name>RSS 订阅</name>
-            <uri>https://linbuer233.github.io/blog/rss.xml</uri>
         </author>
         <category label="ML&DL" term="ML&DL"/>
         <category label="气象" term="气象"/>
