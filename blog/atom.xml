@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://linbuer233.github.io/blog"/>
     <subtitle>LZY-Meteorological-Workshop Blog</subtitle>
-    <icon>https://linbuer233.github.io/img/kaby32.ico</icon>
+    <icon>https://linbuer233.github.io/img/web.ico</icon>
     <rights>Copyright © 2023 Facebook, Inc.</rights>
     <entry>
         <title type="html"><![CDATA[正则表达式笔记]]></title>
