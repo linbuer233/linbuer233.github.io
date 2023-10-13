@@ -12,7 +12,7 @@
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.67eef57b.css">
-<link rel="preload" href="/assets/js/runtime~main.964ec2fc.js" as="script">
+<link rel="preload" href="/assets/js/runtime~main.e36029b4.js" as="script">
 <link rel="preload" href="/assets/js/main.13567f4a.js" as="script">
 </head>
 <body class="navigation-with-keyboard" data-theme="light">
@@ -52,7 +52,7 @@ encoder 的更新准则是：编解码前后图片的方差尽可能小；编码
 decoder 的更新准则是：编解码前后图片的方差尽可能小；解码后的图片得分尽量高，reconstructed 产生的图片的得分也尽量高
 discriminator 的更新准则是：要尽量能区分 generator，reconstructed 和 realistic 的图片；因此对于原始图像的得分要尽量高，对于 generator，reconstructed 的图片的得分要尽量低。
 注意：上面的图片有三种情况：1）原始图片（分布在 database 中，realistic）2）原始图片经过编解码之后产生的图片（generator）3）从某个分布中随机采样得到 z，输入解码器中获得的图片（reconstructed）</p></li></ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-tags-row row margin-bottom--sm"><div class="col"><b>标签：</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/docs/tags/ml-dl">ML&amp;DL</a></li></ul></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文档分页导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/ML&amp;DL/ARNNbiji"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">RNN 学习笔记</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/ML&amp;DL/ElninoCNN"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">《Deep learning for multi-year ENSO forecasts》论文复现</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#基础层" class="table-of-contents__link toc-highlight">基础层</a></li><li><a href="#卷积网络相关层" class="table-of-contents__link toc-highlight">卷积网络相关层</a></li><li><a href="#循环网络相关层" class="table-of-contents__link toc-highlight">循环网络相关层</a></li><li><a href="#transformer-相关层" class="table-of-contents__link toc-highlight">Transformer 相关层</a></li><li><a href="#自定义模型层" class="table-of-contents__link toc-highlight">自定义模型层</a></li><li><a href="#常用的损失函数" class="table-of-contents__link toc-highlight">常用的损失函数</a></li><li><a href="#自定义损失函数" class="table-of-contents__link toc-highlight">自定义损失函数</a></li><li><a href="#1-兴趣抽取层" class="table-of-contents__link toc-highlight">1. 兴趣抽取层</a></li><li><a href="#3-兴趣演化层" class="table-of-contents__link toc-highlight">3. 兴趣演化层</a></li><li><a href="#资料" class="table-of-contents__link toc-highlight">资料</a></li><li><a href="#vae" class="table-of-contents__link toc-highlight">VAE</a></li><li><a href="#gan" class="table-of-contents__link toc-highlight">GAN</a></li><li><a href="#运作流程" class="table-of-contents__link toc-highlight">运作流程</a></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 My Blog, Inc. Built with Docusaurus.</div></div></div></footer></div>
-<script src="/assets/js/runtime~main.964ec2fc.js"></script>
+<script src="/assets/js/runtime~main.e36029b4.js"></script>
 <script src="/assets/js/main.13567f4a.js"></script>
 </body>
 </html>
